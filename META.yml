@@ -1,0 +1,21 @@
+---
+abstract: "IRC plugin to fetch random TIL's from reddit.com"
+author:
+  - 'Curtis Brandt <curtis@cpan.org>'
+build_requires: {}
+configure_requires:
+  ExtUtils::MakeMaker: 6.30
+dynamic_config: 0
+generated_by: 'Dist::Zilla version 4.300034, CPAN::Meta::Converter version 2.120921'
+license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: POE-Component-IRC-Plugin-WWW-Reddit-TIL
+requires:
+  LWP::Simple: 0
+  Mojo::JSON: 0
+  POE::Component::IRC::Plugin: 0
+  Test::More: 0
+  WWW::Shorten::Simple: 0
+version: 0.001

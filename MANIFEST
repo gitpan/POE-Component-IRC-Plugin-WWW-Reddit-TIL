@@ -1,0 +1,13 @@
+Changes
+LICENSE
+MANIFEST
+META.yml
+Makefile.PL
+README
+README.md
+dist.ini
+lib/POE/Component/IRC/Plugin/WWW/Reddit/TIL.pm
+t/00-load.t
+t/manifest.t
+t/pod-coverage.t
+t/pod.t
