@@ -1,2 +1,5 @@
+0.02  2013-06-13 08:33:26 PDT
+        - Convert module to Dist::Milla
+        - Update module's abstract
 0.01    2013-24-25
-        First version
+        - First version

@@ -1,0 +1,68 @@
+{
+   "abstract" : "IRC plugin that fetches random TIL headlines from reddit.com/r/TodayILearned",
+   "author" : [
+      "Curtis Brandt, C<< <curtis at cpan.org> >>"
+   ],
+   "dynamic_config" : 0,
+   "generated_by" : "Dist::Milla version v1.0.2, Dist::Zilla version 4.300034, CPAN::Meta::Converter version 2.120921",
+   "license" : [
+      "perl_5"
+   ],
+   "meta-spec" : {
+      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+      "version" : "2"
+   },
+   "name" : "POE-Component-IRC-Plugin-WWW-Reddit-TIL",
+   "no_index" : {
+      "directory" : [
+         "t",
+         "xt",
+         "inc",
+         "share",
+         "eg",
+         "examples"
+      ]
+   },
+   "prereqs" : {
+      "configure" : {
+         "requires" : {
+            "Module::Build::Tiny" : "0.023"
+         }
+      },
+      "develop" : {
+         "requires" : {
+            "Test::Pod" : "1.41"
+         }
+      },
+      "runtime" : {
+         "requires" : {
+            "LWP::Simple" : "0",
+            "Mojo::JSON" : "0",
+            "POE::Component::IRC::Plugin" : "0",
+            "perl" : "5.008005"
+         }
+      },
+      "test" : {
+         "requires" : {
+            "Test::More" : "0.88"
+         }
+      }
+   },
+   "release_status" : "stable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/aggrolite/POE-Component-IRC-Plugin-WWW-Reddit-TIL/issues"
+      },
+      "homepage" : "https://github.com/aggrolite/POE-Component-IRC-Plugin-WWW-Reddit-TIL",
+      "repository" : {
+         "type" : "git",
+         "url" : "https://github.com/aggrolite/POE-Component-IRC-Plugin-WWW-Reddit-TIL.git",
+         "web" : "https://github.com/aggrolite/POE-Component-IRC-Plugin-WWW-Reddit-TIL"
+      }
+   },
+   "version" : "0.02",
+   "x_contributors" : [
+      "Curtis Brandt <curtisjbrandt@gmail.com>"
+   ]
+}
+

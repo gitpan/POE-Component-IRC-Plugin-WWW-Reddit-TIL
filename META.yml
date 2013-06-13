@@ -1,21 +1,35 @@
 ---
-abstract: "IRC plugin to fetch random TIL's from reddit.com"
+abstract: 'IRC plugin that fetches random TIL headlines from reddit.com/r/TodayILearned'
 author:
-  - 'Curtis Brandt <curtis@cpan.org>'
-build_requires: {}
+  - 'Curtis Brandt, C<< <curtis at cpan.org> >>'
+build_requires:
+  Test::More: 0.88
 configure_requires:
-  ExtUtils::MakeMaker: 6.30
+  Module::Build::Tiny: 0.023
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 4.300034, CPAN::Meta::Converter version 2.120921'
+generated_by: 'Dist::Milla version v1.0.2, Dist::Zilla version 4.300034, CPAN::Meta::Converter version 2.120921'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: 1.4
 name: POE-Component-IRC-Plugin-WWW-Reddit-TIL
+no_index:
+  directory:
+    - t
+    - xt
+    - inc
+    - share
+    - eg
+    - examples
 requires:
   LWP::Simple: 0
   Mojo::JSON: 0
   POE::Component::IRC::Plugin: 0
-  Test::More: 0
-  WWW::Shorten::Simple: 0
-version: 0.001
+  perl: 5.008005
+resources:
+  bugtracker: https://github.com/aggrolite/POE-Component-IRC-Plugin-WWW-Reddit-TIL/issues
+  homepage: https://github.com/aggrolite/POE-Component-IRC-Plugin-WWW-Reddit-TIL
+  repository: https://github.com/aggrolite/POE-Component-IRC-Plugin-WWW-Reddit-TIL.git
+version: 0.02
+x_contributors:
+  - 'Curtis Brandt <curtisjbrandt@gmail.com>'

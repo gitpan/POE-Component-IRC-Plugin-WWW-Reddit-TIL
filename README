@@ -1,13 +1,56 @@
+NAME
+    POE::Component::IRC::Plugin::WWW::Reddit::TIL - IRC plugin that fetches
+    random TIL headlines from reddit.com/r/TodayILearned
 
+VERSION
+    Version 0.01
 
-This archive contains the distribution POE-Component-IRC-Plugin-WWW-Reddit-TIL,
-version 0.001:
+SYNOPSIS
+        use strict;
+        use warnings;
 
-  IRC plugin to fetch random TIL's from reddit.com
+        use POE qw(Component::IRC  Component::IRC::Plugin::WWW::Reddit::TIL);
 
-This software is copyright (c) 2013 by Curtis Brandt.
+        my $irc = POE::Component::IRC->spawn(
+            nick    => 'nickname',
+            server  => 'irc.freenode.net',
+            port    => 6667,
+            ircname => 'ircname',
+        );
 
-This is free software; you can redistribute it and/or modify it under
-the same terms as the Perl 5 programming language system itself.
+        POE::Session->create(package_states => [main => [qw(_start irc_001)]]);
 
+        $poe_kernel->run;
+
+        sub _start {
+            $irc->yield(register => 'all');
+
+            $irc->plugin_add('TIL' => POE::Component::IRC::Plugin::WWW::Reddit::TIL->new);
+
+            $irc->yield(connect => {});
+        }
+
+        sub irc_001 {
+            $irc->yield(join => '#channel');
+        }
+
+DESCRIPTION
+    type !til (casing does not matter) to get a random title and link from
+    the first page of <http://www.reddit.com/r/todayilearned>
+
+AUTHOR
+    Curtis Brandt, "<curtis at cpan.org>"
+
+BUGS
+    Please report bugs on my Github:
+    <https://github.com/aggrolite/POE-Component-IRC-Plugin-WWW-Reddit-TIL>
+
+LICENSE AND COPYRIGHT
+    Copyright 2013 Curtis Brandt.
+
+    This program is free software; you can redistribute it and/or modify it
+    under the terms of either: the GNU General Public License as published
+    by the Free Software Foundation; or the Artistic License.
+
+    See http://dev.perl.org/licenses/ for more information.
 
