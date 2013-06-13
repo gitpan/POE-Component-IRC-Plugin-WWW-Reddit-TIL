@@ -1,3 +1,6 @@
+0.03  2013-06-13 14:17:38 PDT
+        - Use Mojo::UserAgent for web extraction
+
 0.02  2013-06-13 08:33:26 PDT
         - Convert module to Dist::Milla
         - Update module's abstract

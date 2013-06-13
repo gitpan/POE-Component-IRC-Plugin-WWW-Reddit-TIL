@@ -36,10 +36,9 @@
       },
       "runtime" : {
          "requires" : {
-            "LWP::Simple" : "0",
-            "Mojo::JSON" : "0",
+            "Mojo::UserAgent" : "0",
             "POE::Component::IRC::Plugin" : "0",
-            "perl" : "5.008005"
+            "perl" : "5.010"
          }
       },
       "test" : {
@@ -60,7 +59,7 @@
          "web" : "https://github.com/aggrolite/POE-Component-IRC-Plugin-WWW-Reddit-TIL"
       }
    },
-   "version" : "0.02",
+   "version" : "0.03",
    "x_contributors" : [
       "Curtis Brandt <curtisjbrandt@gmail.com>"
    ]

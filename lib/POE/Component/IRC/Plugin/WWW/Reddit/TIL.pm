@@ -1,16 +1,14 @@
 package POE::Component::IRC::Plugin::WWW::Reddit::TIL;
 
-use 5.008_005;
+use 5.010;
 use strict;
 use warnings;
 
-use WWW::Shorten::Simple;
-
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 use POE::Component::IRC::Plugin qw( :ALL );
-use Mojo::JSON;
-use LWP::Simple qw(get);
+use Mojo::UserAgent;
+use WWW::Shorten::Simple;
 
 sub new {
     my $package = shift;
@@ -49,24 +47,22 @@ sub S_public {
 }
 
 sub _get_TIL {
-    my $json = get('http://www.reddit.com/r/todayilearned.json');
-    my $data    = eval { Mojo::JSON->new->decode($json) };
-    if (ref($data) && ref($data) eq 'HASH') {
-        my %posts =
-          map {
-            my $t = $_->{data}{title};
-            my $l = $_->{data}{url};
-            $t && $l ? ($t => $l) : ()
-          } @{$data->{data}{children}};
-
-        if (%posts) {
-            my $title = (keys %posts)[rand keys %posts];
-            my $short = WWW::Shorten::Simple->new('Bitly','aggrolite','R_418414782c81e2c4444348e367201706');
-            my $link  = $short->shorten($posts{$title});
-            return "$title $link";
-        }
+    my $ua = Mojo::UserAgent->new;
+    my %posts;
+    foreach my $post (
+        @{$ua->get('http://www.reddit.com/r/todayilearned.json')->res->json->{data}{children}})
+    {
+        my $title = $post->{data}{title};
+        my $link  = $post->{data}{url};
+        $posts{$title} = $link if $title && $link;
     }
-    return '';
+    return unless %posts;
+
+    my $title = (keys %posts)[rand keys %posts];
+    my $short =
+      WWW::Shorten::Simple->new('Bitly', 'aggrolite', 'R_418414782c81e2c4444348e367201706');
+    my $link = $short->shorten($posts{$title});
+    return "$title $link";
 }
 
 1;
