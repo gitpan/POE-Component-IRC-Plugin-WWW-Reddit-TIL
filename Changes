@@ -1,3 +1,6 @@
+0.04  2013-06-14 11:09:10 PDT
+        - Include WWW::Shorten::Simple as prereq
+
 0.03  2013-06-13 14:17:38 PDT
         - Use Mojo::UserAgent for web extraction
 
