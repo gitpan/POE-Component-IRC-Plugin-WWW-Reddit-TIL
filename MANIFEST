@@ -8,5 +8,5 @@ README
 cpanfile
 dist.ini
 lib/POE/Component/IRC/Plugin/WWW/Reddit/TIL.pm
-t/basic.t
+t/reddit.t
 t/release-pod-syntax.t
