@@ -24,12 +24,13 @@ no_index:
 requires:
   Mojo::UserAgent: 0
   POE::Component::IRC::Plugin: 0
-  WWW::Shorten::Simple: 0
+  WWW::Shorten::Bitly: 1.17
+  WWW::Shorten::Simple: 0.01
   perl: 5.010
 resources:
   bugtracker: https://github.com/aggrolite/POE-Component-IRC-Plugin-WWW-Reddit-TIL/issues
   homepage: https://github.com/aggrolite/POE-Component-IRC-Plugin-WWW-Reddit-TIL
   repository: https://github.com/aggrolite/POE-Component-IRC-Plugin-WWW-Reddit-TIL.git
-version: 0.05
+version: 0.06
 x_contributors:
   - 'Curtis Brandt <curtisjbrandt@gmail.com>'
