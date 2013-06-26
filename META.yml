@@ -31,6 +31,6 @@ resources:
   bugtracker: https://github.com/aggrolite/POE-Component-IRC-Plugin-WWW-Reddit-TIL/issues
   homepage: https://github.com/aggrolite/POE-Component-IRC-Plugin-WWW-Reddit-TIL
   repository: https://github.com/aggrolite/POE-Component-IRC-Plugin-WWW-Reddit-TIL.git
-version: 0.06
+version: 0.07
 x_contributors:
   - 'Curtis Brandt <curtisjbrandt@gmail.com>'

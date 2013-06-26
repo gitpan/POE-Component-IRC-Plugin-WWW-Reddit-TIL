@@ -13,7 +13,7 @@ my $til    = $reddit->_get_TIL;
 
 like(
     $til,
-    qr!^ .+ \s http:// [a-z]+ \. [a-z]+ / [^/]+ /? $!ix,
+    qr!^ .+ \s http:// [^/]+ / [^/]+ /? $!ix,
     'TIL method returns a message and a link'
 );
 

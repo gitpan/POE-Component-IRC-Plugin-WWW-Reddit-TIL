@@ -1,3 +1,6 @@
+0.07  2013-06-26 10:14:00 PDT
+        - Fix TIL test
+
 0.06  2013-06-18 08:54:40 PDT
         - Add WWW::Shorten::Bitly as dependency
 
